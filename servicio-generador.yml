@@ -1,8 +1,0 @@
-server:
-  port: 9898
-  
-eureka:
-  client:
-    registerWithEureka: false
-    serviceUrl:
-      defaultZone: http://172.10.2.88:8761/eureka
