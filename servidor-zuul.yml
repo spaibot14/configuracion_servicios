@@ -1,0 +1,21 @@
+server:
+  port: 7000 #puerto del zuul service 
+zuul:
+  ignoredServices: '*' 
+  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+  routes:
+      servicio-vuelos: # Service to create as sample
+        path: /vuelos/** #path that will be intercepted
+        serviceId: servicio-vuelos
+        #url: http://localhost:9000  #Esto e spor si no tuviesemos eureka y queremos acceder directamente se pondria esto
+      servicio-hoteles: # Service to create as sample
+        path: /hoteles/** #path that will be intercepted
+        serviceId: servicio-hoteles
+      servicio-reservas: # Service to create as sample
+        path: /reservas/** #path that will be intercepted
+        serviceId: servicio-reserva
+      
+eureka:                  
+  client:
+    serviceUrl:
+      defaultZone: http://10.10.2.88:8761/eureka
