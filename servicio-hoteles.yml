@@ -3,7 +3,6 @@ server:
   
 eureka:
   client:
-    registerWithEureka:
     serviceUrl:
       defaultZone: http://172.10.2.88:8761/eureka
       
